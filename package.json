@@ -1,0 +1,16 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "test demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "vnscoinjs-tx" : "^vnscoinjs-tx-1.0.0",
+    "vnscoinjs-util" : "^vnscoinjs-util-0.0.1",
+    "keyvnscoin":"^keyvnscoin-1.0.0"
+  },
+  "author": "venus",
+  "license": "ISC"
+}
