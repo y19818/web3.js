@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 
 const Web3 = require("web3");
-var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8585"));
+const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8585"));
 //console.log(web3);
 var sum = 0;
 const connection = mysql.createConnection({
@@ -36,17 +36,18 @@ function insert(x) {
 const VnscoinTx = require('vnscoinjs-tx');
 //var tx = web3.vns.getTransaction('0xd377c1bcafc24b97f76d7392ed876de6fef169b1a98bed19c9cc4fc31d0f0995');
 //console.log(tx.value.c[0]/10**4);
+var c = web3.vns;
 connection.connect();
-for (var i=359645;i<=3549678;i++)
+for (var i=3549645;i<=3549678;i++)
 {
 
-    let check_tx = web3.vns.getBlock(i).transactions;
-    for(var p=0;p<=check_tx.length;p++){
+    var a = c.getBlock(i);
+    for(var p=0;p<=a.transactions.length;p++){
         // web3.vns.getTransaction(x);
-        if (check_tx[p]!=undefined){
-            let b =web3.vns.getTransaction(check_tx[p]);
+        if (a.transactions[p]!=undefined){
+            var b =web3.vns.getTransaction(a.transactions[p]);
             insert(b);
-            console.log(i);
+            console.log(b);
 
         }
     }
